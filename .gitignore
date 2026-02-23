@@ -1,6 +1,11 @@
-.terraform\
+# Terrraform files
+.terraform/
+
+# Terraform variables and state
 *.tfvars
 *.tfvars.json
 *.tfstate 
 *.tfstate.*
+
+# Mac OS files
 *.DS_Store
