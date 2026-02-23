@@ -34,3 +34,7 @@ variable "ses_sender_email"{
     description = "SES Sender Email for sending notifications"
 }
 
+variable "it_email" {
+    type = string 
+    description = "IT team's email address for notifications"
+}

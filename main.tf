@@ -52,6 +52,7 @@ module "lambda_functions" {
   sqs_ticket_queue_url = module.sqs.sqs_ticket_queue_url
   ticket_table_name = module.dynamodb.ticket_table_name
   ses_sender_email = var.ses_sender_email
+  it_email = var.it_email
 }
 
 module "s3_bucket" {

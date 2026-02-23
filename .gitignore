@@ -3,3 +3,4 @@
 *.tfvars.json
 *.tfstate 
 *.tfstate.*
+*.DS_Store

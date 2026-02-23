@@ -18,3 +18,8 @@ variable "aws_region" {
   description = "AWS Region"
   type = string
 }
+
+variable "it_email" {
+  type        = string
+  description = "IT team's email address for notifications"
+}

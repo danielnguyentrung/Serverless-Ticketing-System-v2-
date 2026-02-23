@@ -37,7 +37,7 @@ timeout = 10
 
 environment {
     variables = {
-        DYNAMODB_TABLE_NAME = var.ticket_table_name
+        USERS_TABLE = var.ticket_table_name
         SES_SENDER_EMAIL = var.ses_sender_email 
         }
     }
@@ -59,8 +59,10 @@ source_code_hash = filebase64sha256("${path.module}/src/stale_ticket_checker_lam
 timeout = 10
 
 environment {
-    variables = { 
+    variables = {
+        USERS_TABLE = var.ticket_table_name
         SES_SENDER_EMAIL = var.ses_sender_email
+        IT_EMAIL = var.it_email 
         }
     }
 }
