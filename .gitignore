@@ -6,7 +6,6 @@
 *.tfvars.json
 *.tfstate 
 *.tfstate.*
-.terraform.lock.hcl*
 
 # Mac OS files
 *.DS_Store
