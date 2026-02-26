@@ -8,3 +8,6 @@ output "cloudfront_distribution_arn" {
   value       = aws_cloudfront_distribution.it_ticket_portal_distribution.arn
 }
 
+output "cloudfront_oac_id" {
+  value = aws_cloudfront_origin_access_control.s3_oac.id
+}

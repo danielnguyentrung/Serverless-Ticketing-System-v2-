@@ -32,7 +32,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "it_ticket_portal_
 
     rule {
         apply_server_side_encryption_by_default {
-            sse_algorithm = "aws:kms"
+            sse_algorithm = "AES256"
         }
     }
 }
@@ -44,6 +44,7 @@ resource "aws_s3_object" "index" {
   key          = "index.html"
   source       = "s3_frontend/index.html"
   content_type = "text/html"
+  etag         = filemd5("s3_frontend/index.html")
 }
 
 # Upload error.html to S3 Bucket 
@@ -53,4 +54,5 @@ resource "aws_s3_object" "error" {
   key          = "error.html"
   source       = "s3_frontend/error.html"
   content_type = "text/html"
+  etag         = filemd5("s3_frontend/error.html")
 }

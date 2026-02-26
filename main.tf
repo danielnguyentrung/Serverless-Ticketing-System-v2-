@@ -30,7 +30,6 @@ module "api_gateway" {
 
 module "cloudfront" {
   source = "./services/cloudfront"
-
   it_ticket_portal_bucket_regional_domain_name = module.s3_bucket.it_ticket_portal_bucket_regional_domain_name
 }
 

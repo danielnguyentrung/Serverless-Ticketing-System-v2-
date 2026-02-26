@@ -11,3 +11,4 @@ output "it_ticket_portal_bucket_arn" {
 output "it_ticket_portal_bucket_regional_domain_name" {
   value = aws_s3_bucket.it_ticket_portal.bucket_regional_domain_name   
 }
+
