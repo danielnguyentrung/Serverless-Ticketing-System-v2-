@@ -60,9 +60,9 @@ Note: Amazon CloudWatch is enabled to collect logs and metrics from all serverle
 
 The ticket submission interface is as a static web application hosted on Amazon S3 and globally distributed through an Amazon CloudFront distribution for secure, low-latency access. 
 
-<img width="1487" height="1222" alt="Screenshot 2026-03-02 213721" src="https://github.com/user-attachments/assets/8aaa43f8-5f1a-4e54-94df-d8aab7adf859" />
-
 [View Live Website](https://d2mt240u469po7.cloudfront.net/)
+
+<img width="1487" height="1222" alt="Screenshot 2026-03-02 213721" src="https://github.com/user-attachments/assets/8aaa43f8-5f1a-4e54-94df-d8aab7adf859" />
 
 ## Lessons Learned
 - Gained hands-on experience utilizing terraform to deploy AWS serverless services, including IAM policies and roles, AWS Lambda, Amazon SQS, Amazon SES, API Gateway, S3, CloudFront, Amazon Eventbridge, Amazon Bedrock. 
