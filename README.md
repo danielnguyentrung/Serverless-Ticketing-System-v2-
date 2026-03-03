@@ -42,7 +42,7 @@ Version 2 introduced several architectural improvements:
   - Problem Type
   - Ticket Description
 
-## End User Notification Includes
+### End User Notification Includes
 - Ticket ID
 - Assigned Team Member
 - Original Ticket Title
