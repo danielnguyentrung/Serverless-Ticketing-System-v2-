@@ -27,8 +27,8 @@ Version 2 introduced several architectural improvements:
 7. If the submitted problem type does not align with the ticket title and description, Amazon Bedrock (Claude) will automaticaly reclassies the ticket using the predefine problem-type list. 
 8. Once the ticket has been processed, Amazon SES is used to notify the IT team, and end users.
 
-## IT Team Notification Includes 
-### AI Validated Ticket Summary:
+### IT Team Notification Includes 
+#### AI Validated Ticket Summary:
   - User's first and last name 
   - Email
   - Ticket ID
@@ -37,12 +37,12 @@ Version 2 introduced several architectural improvements:
   - Problem Type
   - Ticket Urgency
   - Assigned team member
-### Original Ticket Submission:
+#### Original Ticket Submission:
   - Ticket Title
   - Problem Type
   - Ticket Description
 
-## End User Notification Includes
+$## End User Notification Includes
 - Ticket ID
 - Assigned Team Member
 - Original Ticket Title
