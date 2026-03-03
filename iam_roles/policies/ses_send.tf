@@ -13,7 +13,7 @@ resource "aws_iam_policy" "ses_send" {
           "ses:SendEmail", 
           "ses:SendRawEmail"
         ]
-        Resource = var.ses_arn
+        Resource = "*"
 
       }
     ]

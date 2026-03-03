@@ -11,16 +11,16 @@ module "iam_policies" {
 data "aws_caller_identity" "current" {}
 
 locals {
-  ses_arn = "arn:aws:ses:${var.aws_region}:${data.aws_caller_identity.current.account_id}:identity/${var.ses_sender_email}"
+  ses_arn = "arn:aws:ses:${var.aws_region}:${data.aws_caller_identity.current.account_id}:identity/${var.sender_email}"
 }
 
 module "iam_roles" {
   source = "./iam_roles/roles"
-  sqs_send_policy_arn = module.iam_policies.sqs_send_policy_arn
   ses_send_policy_arn = module.iam_policies.ses_send_policy_arn
   bedrock_policy_arn = module.iam_policies.bedrock_policy_arn
   dynamodb_put_get_update_policy_arn = module.iam_policies.dynamodb_put_get_update_policy_arn
   dynamodb_scan_update_policy_arn = module.iam_policies.dynamodb_scan_update_policy_arn
+  sqs_policy_arn = module.iam_policies.sqs_policy_arn
 }
 
 module "api_gateway" {
@@ -37,10 +37,16 @@ module "dynamodb" {
   source = "./services/dynamodb"
 }
 
+module "eventbridge" {
+  source = "./services/eventbridge"
+  stale_ticket_checker_lambda_arn = module.lambda_functions.stale_ticket_checker_lambda_arn
+}
+
 module "sqs" {
   source = "./services/sqs"
   queue_name = "ticket-queue"
   dlq_name = "ticket-queue-dlq"
+  ticket_processor_lambda_arn = module.lambda_functions.ticket_processor_lambda_arn
 }
 
 module "lambda_functions" {
@@ -50,7 +56,7 @@ module "lambda_functions" {
   stc_lambda_iam_role_arn = module.iam_roles.stc_lambda_iam_role_arn
   sqs_ticket_queue_url = module.sqs.sqs_ticket_queue_url
   ticket_table_name = module.dynamodb.ticket_table_name
-  ses_sender_email = var.ses_sender_email
+  ses_sender_email = var.sender_email
   it_email = var.it_email
 }
 
@@ -61,6 +67,6 @@ module "s3_bucket" {
 
 module "ses" {
   source = "./services/ses"
-  ses_sender_email = var.ses_sender_email 
+  ses_sender_email = var.sender_email 
 }
 

@@ -18,7 +18,7 @@ output "ses_send_policy_arn"{
     value = aws_iam_policy.ses_send.arn
 }
 
-output "sqs_send_policy_arn" {
+output "sqs_policy_arn" {
     description = "The ARN of the SQS Send Policy"
-    value = aws_iam_policy.sqs_send.arn
+    value = aws_iam_policy.sqs_policy.arn
 }

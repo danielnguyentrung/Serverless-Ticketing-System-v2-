@@ -1,4 +1,4 @@
-variable "ses_sender_email" {
+variable "sender_email" {
   type        = string
   description = "SES Sender Email for sending notifications"
 }

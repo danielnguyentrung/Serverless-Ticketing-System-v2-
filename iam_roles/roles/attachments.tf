@@ -2,7 +2,7 @@
 
 resource "aws_iam_role_policy_attachment" "ingress_lambda_iam_sqs_send" {
     role = aws_iam_role.ingress_lambda_iam_role.name
-    policy_arn = var.sqs_send_policy_arn
+    policy_arn = var.sqs_policy_arn
 }
 
 resource "aws_iam_role_policy_attachment" "ingress_lambda_logs"{
@@ -20,6 +20,11 @@ resource "aws_iam_role_policy_attachment" "tpl_dynamodb_put_get_update"{
 resource "aws_iam_role_policy_attachment" "tpl_ses_send"{
     role = aws_iam_role.tpl_lambda_iam_role.name
     policy_arn = var.ses_send_policy_arn
+}
+
+resource "aws_iam_role_policy_attachment" "tpl_sqs_queue"{
+    role = aws_iam_role.tpl_lambda_iam_role.name
+    policy_arn = var.sqs_policy_arn
 }
 
 resource "aws_iam_role_policy_attachment" "tpl_cw_logs"{

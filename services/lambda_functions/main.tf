@@ -33,12 +33,13 @@ role = var.tpl_lambda_iam_role_arn
 filename = "${path.module}/src/ticket_processor_lambda.zip"
 source_code_hash = filebase64sha256("${path.module}/src/ticket_processor_lambda.zip")
 
-timeout = 10
+timeout = 30
 
 environment {
     variables = {
         USERS_TABLE = var.ticket_table_name
-        SES_SENDER_EMAIL = var.ses_sender_email 
+        SENDER_EMAIL = var.ses_sender_email
+        BEDROCK_MODEL_ID = "anthropic.claude-3-haiku-20240307-v1:0"
         }
     }
 }
