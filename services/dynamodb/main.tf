@@ -1,13 +1,13 @@
 # DynamoDB Table for Client and Ticket Information
 
 resource "aws_dynamodb_table" "customer_database" {
-    name = "customer-database"
-    hash_key = "email"
+  name     = "customer-database"
+  hash_key = "email"
 
-    attribute {
-        name = "email"
-        type = "S"
-    }
+  attribute {
+    name = "email"
+    type = "S"
+  }
 
-    billing_mode = "PAY_PER_REQUEST"
+  billing_mode = "PAY_PER_REQUEST"
 }

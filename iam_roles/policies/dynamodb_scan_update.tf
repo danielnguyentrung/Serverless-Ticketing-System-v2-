@@ -1,7 +1,7 @@
 # IAM Policy to allow Scan and UpdateItem actions on DynamoDB Table
 
 resource "aws_iam_policy" "dynamodb_scan_update" {
-  name = "DynamoDB_ScanUpdate"
+  name        = "DynamoDB_ScanUpdate"
   description = "Allows Scan and UpdateItem actions on DynamoDB Table"
 
   policy = jsonencode({

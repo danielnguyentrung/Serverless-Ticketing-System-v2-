@@ -1,7 +1,7 @@
 # IAM Policy to allow sending messages to SQS Queue 
 
 resource "aws_iam_policy" "sqs_policy" {
-  name = "SQS-Policy"
+  name        = "SQS-Policy"
   description = "Send Message to SQS Queue"
 
   policy = jsonencode({

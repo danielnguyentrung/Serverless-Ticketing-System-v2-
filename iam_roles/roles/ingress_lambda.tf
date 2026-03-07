@@ -1,9 +1,9 @@
 # IAM Role for Ingress Lambda Function
 
 resource "aws_iam_role" "ingress_lambda_iam_role" {
-    name = "ingress_lambda_iam_role"
+  name = "ingress_lambda_iam_role"
 
-assume_role_policy = jsonencode({
+  assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
